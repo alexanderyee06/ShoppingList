@@ -22,7 +22,7 @@
             <input type="hidden" name="action" value="add">
             
             <label for="item">Add item:</label>
-            <input type="text" name="item" id="item">
+            <input type="text" name="item" id="item" required>
             <button type="submit">Add</button>
         </form>
         
