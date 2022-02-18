@@ -3,7 +3,7 @@
     Created on : 18-Feb-2022, 1:12:38 PM
     Author     : alexa
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,17 +18,21 @@
         
         <h2>List</h2>
         
-        <form>
+        <form action="ShoppingList" method="post">
+            <input type="hidden" name="action" value="add">
+            
             <label for="item">Add item:</label>
             <input type="text" name="item" id="item">
             <button type="submit">Add</button>
         </form>
         
         <form>
-            <p>
-                <input type="radio" name="item" value="apples">
-                apples
-            </p>
+            <c:forEach items="${items}" var="item">
+                <p>
+                    <input type="radio" name="item" value="${item}">
+                    ${item}
+                </p>
+            </c:forEach>
             <button type="submit">Delete</button>
         </form>
     </body>
